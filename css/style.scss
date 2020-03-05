@@ -1,0 +1,847 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	background: #0C0C0C;
+	font-family: Proxima Nova Cn Bl;
+}
+
+/* FONTS */
+
+@font-face {
+	font-family: 'Proxima Nova Cn Bl';
+	/*src: url('../fonts/ProximaNovaCond-Black.eot');*/
+	src: local('Proxima Nova Condensed Black'), local('ProximaNovaCond-Black'),
+		url('../fonts/ProximaNovaCond-Black.ttf') format('truetype');
+
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova Cn Rg';
+	/*src: url('ProximaNovaCond-Regular.eot');*/
+	src: local('Proxima Nova Condensed Regular'), local('ProximaNovaCond-Regular'),
+		url('../fonts/ProximaNovaCond-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Оформления ползунка */
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-thumb {
+	
+    background:#0F33FF;
+}
+
+::-moz-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, .0);
+}
+
+::-moz-scrollbar-thumb {
+     background:#0F33FF;
+}
+
+
+
+/* Menu - fixed*/
+
+#header{
+	padding: 20px 10px;
+	background: #0C0C0C;
+	position: fixed;
+	left: 0;
+	z-index: 9999;
+	top: 0;
+
+	width: 100%;
+	.logo{
+		position: absolute;
+		font-size: 22px;
+		font-weight: bold;
+		padding-left: 15px;
+	}
+	.oveflowButton{
+		padding: 5px 19px;
+		color: white;
+		cursor: pointer;
+		transition-duration: 1800ms;
+		background-color: #0F33FF;
+		position: absolute;
+		display: none;
+		top: 50%;
+		left: 50%;
+		transform:translate(-50%,-50%);
+	}
+
+
+	.link_open_menu{
+		float: right;
+		border-radius: 2px;
+		/*box-shadow: 0px 0px 24px rgba(15,51,255,.9);*/
+		padding: 3px 5px 0px;
+		margin-right: 10px;
+		cursor: pointer;
+		& img{
+			width:30px;
+			height: 30px;
+		}
+	}
+
+	.link_hover_menu{
+		box-shadow: 0px 0px 24px rgba(15,51,255,.9);
+	}
+}
+
+
+
+.main_block{
+	position: relative;
+	top: 0px;
+	width:100%;
+	/*background: #282828;*/
+	
+	left: 0px;
+	overflow: hidden;
+	display: flex;
+
+	/* Left Menu */
+	.main_block_left_scroll{ 
+	background: #0C0C0C;
+	width:900px;
+	transform: rotate(90deg);
+	left: -390px;
+	z-index: 991;
+	padding-left: 35px;
+
+	height: 120px;
+	position: absolute;
+	display: flex;
+	padding-top: 13px;
+	padding-bottom:57px;
+	top: 465px;
+
+	& span{
+		cursor: pointer;
+		transition-duration: 800ms;
+		width: 160px;
+		position: relative;
+		margin: 0px 0px;
+		border-bottom: 1px solid #1C1C1C;
+		&:hover{border-bottom: 2px solid #0F33FF;}
+	}
+
+	.active{
+	
+		border-bottom: 2px solid #1C1C1C;
+	}
+
+	& .fa{
+		position: relative;
+		padding-top: 45px;
+		font-size: 8px;
+		color: #2b2b2b;
+	}
+	}
+
+	/* Content-part */
+	.main_block_container{
+		width: inherit;
+		/*background: #aaa;*/
+		height: 963px;
+		overflow: hidden;
+	
+		.main_block_container_center{
+			
+			position: relative;
+			margin: 0px auto;
+		/*	bottom: 900px;*/
+			padding: 0px 00px; 
+			width: 100%;
+			display: block;
+			transition-duration: 1s;
+			
+
+
+			.container_content{ /* Блоки которые будут работать как слайдер при прокрутке  */
+				display: block;
+				/*border-bottom: 2px solid red;*/
+				width:initial;
+				height:963px;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				
+				.container_content_center{ /* Центр в котором находится надпись "My name..." */
+				position: relative;
+				margin:0px auto;
+				text-align: center;
+				/*background: red;*/
+
+				}
+			
+			}
+
+
+
+
+
+
+		}
+	}
+
+
+
+
+}
+
+/*Вторые класс container_content - чтобы для каждого применять стили отдельно*/
+.home{
+	background: url(('../image/fon.jpeg');
+	&::before{ /*делаю черным фон, крч над фоном типа пленка */
+	content:"";
+	width: 100%;
+	height:965px;
+	top: 0px;
+	left: 90px;
+	background: rgba(0,0,0,.8);
+	position: absolute;
+	}
+
+	.container_content_center{
+			top: 250px;
+				width: 900px;
+				/*background-color: #000;*/
+				& span:first-child{
+				font-size:72px;	
+				/*font-family:*/
+				}
+				 .subtext{
+					font-size: 29px;
+				}
+
+				.left_text{
+					position: absolute;
+					left: -200px;
+					transform: rotate(-90deg);
+					font-size: 22px;
+				}
+				.right_text{
+					position: absolute;
+					right: -200px;
+						font-size: 22px;
+					transform: rotate(90deg);
+				}
+
+
+				.button_down{
+					position: absolute;
+					margin-top: 400px;
+					cursor: pointer;
+
+					color: white;
+					left: 50%;
+					transform: translate(-50%);
+					padding: 7px 12px;
+					border-radius: 2px;
+					
+					/*Делаем шрифт большой*/
+					&:hover{
+						font-size:18px;
+						transition-duration: 800ms;
+					}
+
+					.background_button{ /*оформление заднего фона кнопки */
+						position: absolute;
+						width: 50%;
+						top:0px;
+						right: 0px;
+						height:33px;
+						z-index: -1;
+						background:#0F33FF; 
+						transition-duration:  800ms;
+					}
+
+
+					& .fa{
+						position: relative;
+						top: 1px;
+						margin: 0px 5px;
+					}
+				}
+			}
+
+}
+
+.works{
+	background: #0C0C0C;
+	transition-duration: 1s;
+	.container_content_center{
+		top: 150px;
+		max-width: 1050px;
+		position: relative;
+		overflow: visible;
+	
+		& span:first-child{
+			font-size: 43px;
+		}
+
+
+		.slader{
+	
+			max-width: 1000px;
+			margin: 0px auto 0px;
+			padding-left: 60px;
+			transition-duration: 1s;
+
+			    .slider {
+			        width: 90%;
+			        margin:60px auto 0px;
+
+			        position: relative;
+			        div span{
+			        		position: relative;		        		
+			        		font-size: 33px;
+			        }
+			    }
+
+			    .slick-slide {
+			      margin: 0px 20px;
+			    }
+
+			    .slick-slide img {
+			      width: 100%;
+			      margin-bottom: 15px;
+			      max-height: 400px;
+			    }
+
+			    .slick-prev:before,
+			    .slick-next:before {
+			      color: white;
+			      margin: 0px 10px;
+
+			      z-index: 9;
+			      font-size: 32px;
+			    }
+			    .slick-prev:before{
+					 margin: 0px 0px 0px -10px; 
+			    }
+
+			    .slick-slide {
+			      transition: all ease-in-out .3s;
+			      opacity: .2;
+			    }
+			    
+			    .slick-active {
+			      opacity: .5;
+			    }
+
+			    .slick-current {
+			      opacity: 1;
+			    }
+
+
+	
+
+		}
+
+
+
+	}
+	
+
+
+}
+
+
+.about{
+	.container_content_center{
+			top: 200px;
+			max-width: 1500px;
+			display: flex;
+			/*background: #fff;*/
+			height: 700px;
+			text-align: left;
+			position: relative;
+		
+			& span:first-child{
+				font-size: 33px;
+				
+			}
+
+			.about_text{
+				text-align: right;
+				width: 600px;
+				padding-top:20px;
+				position: relative;
+				/*background-color: #000;*/
+				padding-right: 30px;
+				& h1{
+					padding: 0px 0px 50px;
+					font-family: Proxima Nova Cn Bl;
+				}
+				font-family: Proxima Nova Cn Rg;
+				.skill{
+					font-size: 32px;
+					font-family: Proxima Nova Cn Bl;
+				}
+				.skils{
+					cursor: pointer;
+					padding: 3px 9px;
+					margin-bottom:  20px;
+					border-radius: 3px;display:inline-block;
+					border: 1px solid #ddd;
+					margin: 5px 2px;
+				}
+				h2::before{
+					width: 70px;
+					height: 30px;
+					position: absolute;
+					background-color: #0F33FF;
+					z-index: -1;
+					content: '';
+					right: 20px;
+					padding: 0px 5px; 
+
+				}
+
+			}
+
+			.hacker_image{
+				width: 1100px;
+				padding: 0px 90px;
+				text-align: left;
+				& img{
+					max-width: 500px;
+
+					max-height: 400px;
+				}
+			}
+
+
+
+			/* Figures */
+		.figure {
+			position: absolute;
+			width: 30px;
+			height: 30px;
+		transform:rotate(80deg);
+			background-color: #0F33FF;
+			top: 160px;
+			left: 100px;
+			box-shadow: 4px 0px 5px 2px rgba(15,51,255,.3);
+		}
+
+		.triangle, .triangle_two{
+		
+			left: 460px;
+			background-color: rgba(0,0,0,.0);
+			top: 50px;
+			border: 30px solid transparent;
+			border-top: 30px solid #0F33FF;
+			box-shadow: none;
+
+			
+		}
+
+		.circle, .circle_two{
+			top: 300px;
+			left: 470px;
+			border-radius: 50%;
+			background-color: #0F33FF;
+		}
+
+		.circle_two{
+			left: 50px;
+			top: 400px;
+
+			width: 20px;
+			height: 20px;
+		}
+		.triangle_two{
+			left: 1050px;
+			transform:rotate(-30deg);
+			top: 300px;
+			border: 15px solid transparent;
+			border-top: 15px solid #0F33FF;
+		}
+
+		.cub_two{
+		left: 600px;
+		transform:rotate(-30deg);
+		width: 50px;
+		height: 50px;
+		}
+
+
+		}
+
+}
+
+/* Это где я живу*/
+.live{
+	background: url(../image/map.jpg) ;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+
+	
+	&::before{
+	content:'';
+	width: 100%;
+	top: 0;
+	height: 963px;
+	background: rgba(0,0,0,.4);
+	background-size: cover;
+	position: absolute;
+	
+	}
+
+	.modal{
+		position: absolute;
+		width: 350px;
+		text-align: center;
+		background-color: #0B0B0B;
+		box-shadow: 0px 0px 20px rgba(0,0,0,.3);
+		right: 200px;
+		top: 350px;
+		padding: 60px 10px 40px;
+
+		& span{
+			display: block;
+			padding: 12px 15px;
+			cursor: pointer;
+			box-shadow: 0px 0px 3px rgba(0,0,0,.4);
+			position: relative;
+			columns: white;
+			margin: 25px 90px;
+		}
+	}
+}
+
+
+/* Последний блок отправки формы*/
+
+.contacts_email{
+	padding: 10px;
+
+	.container_content_center{
+		position: relative;
+		top: 130px;
+		h1{
+			margin-bottom: 120px;
+			font-size: 36px;
+		}
+		& .form{
+
+		& input{
+			border:none;
+			max-width: 500px;
+			font-size: 22px;
+			min-width: 400px;
+			margin:20px;
+			padding: 10px 5px 15px;
+			background-color: rgba(0,0,0,.0);
+			border-bottom: 2px solid #0F33FF;
+			outline: none;
+			}
+
+		& .button{
+			background-color: #0F33FF;
+			width: auto;
+			margin-top: 90px;
+			padding: 15px 55px;
+			font-size: 19px;
+			height: auto;
+			cursor: pointer;
+			&:hover{
+				box-shadow:0px 0px 10px rgba(0,0,0,.1);
+				transition-duration: 800ms;
+			}
+		}
+		}
+	}
+}
+
+
+/* Menu */
+
+
+.menu{
+	position: fixed;
+	width: 100%;
+	top: 25%;
+	/*left: 0;*/
+	height: 50%;
+	background-color: #0b0b0b;
+	color: white;
+	right: -1900px;
+	z-index: 99;
+	text-align: center;
+	transition-duration: 1s;
+
+	opacity: 0.5;
+	.center_menu{
+		max-width: 500px;
+		position: absolute;
+		top: 50%;
+		 left: 50%; 
+		
+		font-size: 46px;
+		transform: translate(-50%, -50%);
+
+		& span{
+		display: block;
+		cursor: pointer;
+
+		&:hover{
+			color:#0F33FF;
+			transition-duration: 800ms;
+		}
+		}
+
+		.line_through{
+			width: 170px;
+		height: 4px;
+		position: absolute;
+		top: 25px;
+		background-color:#0F33FF;
+		}
+	}
+	
+}
+.menuOpen{right: 0px;opacity: 1;height: 100%;top: 0%;}
+
+
+/* это кнопки в меню, которые указывают где мы находимся на странице: 01 home т.п*/
+.numberMenu{
+	position: absolute;
+	z-index: 999;
+	font-family: Proxima Nova Cn Rg;
+	left: 27px;
+	top: 103px;
+	transition-duration: 800ms;
+}
+.activeBlock{
+	left: 75px;
+	position: absolute;
+	z-index: 999;
+	font-family: Proxima Nova Cn Rg;
+	top: 103px;
+transition-duration: 800ms;
+}
+
+
+
+/*Footer*/
+
+footer{
+	position:relative;
+	width: 100%;
+	height: 40px;
+	padding: 10px;
+	text-align: center;
+	background-color: #0F0F0F;
+	.center_footer{
+		max-width: 900px;
+		margin: 0px auto;
+		position: relative;
+		display: flex;
+	}
+	div:nth-child(2){
+		right: 10px;
+		position: absolute;
+	}
+
+	div{
+		& img{
+			width: 25px;
+			border-radius: 3px;
+			margin:0px 3px;
+			height: 25px;
+		}
+	}
+}
+
+/* Модальное окно когда ты отправил формуц) */
+.modal_answer{
+	position: fixed;
+	top: 50%;
+	display: none;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 700px;
+		font-family: Proxima Nova Cn Rg;
+	padding: 30px 30px;
+	height: 300px;
+	color: #EEEEEE;
+	z-index: 999999;
+	box-shadow: 0px 0px 20px rgba(0,0,0,.3);
+	background-color: #0C0C0C;
+ 	.close-modal{
+ 		position: absolute;
+ 		right: 30px;
+ 		top: 30px;
+ 		font-weight: thin;
+ 		
+ 	}
+ 	h3{
+ 		border-bottom: 2px solid #0F33FF;
+ 		padding-bottom: 5px;
+ 		color: white;
+ 		margin-bottom: 10px;
+ 	}
+ 	
+}
+
+
+
+@media (min-width: 310px) and (max-width: 750px) {
+
+#header{
+	padding: 20px 10px;
+	.logo{
+		font-size: 32px;
+	}
+}
+
+
+.main_block{
+overflow: hidden;
+	display: block;
+	/* Left Menu */
+	.main_block_left_scroll{ 
+	display: none;
+	width: 0;
+	height: 0;
+	}
+	/* Content-part */
+	.main_block_container{
+		height: auto;
+		overflow: hidden;
+		.main_block_container_center{
+			width: 100%;
+			display: block;
+		}
+	}
+}
+
+.home{
+	&::before{ /*делаю черным фон, крч над фоном типа пленка */
+	left: 0px;}
+	
+	.container_content_center{	
+		max-width: 355px;
+		& span:first-child{
+			font-size:35px;
+		}
+			.left_text,.right_text{display: none;}
+			.subtext{
+				font-size: 18px;
+				font-family: 'Proxima Nova Cn Rg';
+			}
+			}
+		}
+
+
+.works{
+	max-height:600px;
+	.container_content_center{
+		.slader{
+			padding-left: 0px;
+			max-width: 100%;
+			.slick-prev:before,
+			    .slick-next:before {
+			    	display:none;
+			    }
+
+		}
+	}
+}
+
+
+.about{
+	.container_content_center{
+			top: 150px;
+			padding: 15px;	
+			.about_text{
+				text-align:center;
+				max-width: 600px;
+				margin: 0px auto;
+				padding-right: 0px;}
+
+			.hacker_image{display: none;}
+			}
+
+		}
+
+
+.live{
+
+	.modal{
+		right: 30px;
+		top: 380px;
+		width: auto;
+		font-size: 14px;
+		z-index: 2;
+		padding: 25px 20px 0px;
+		& span{display: none;}
+	}
+
+	.block_Social{
+	z-index: 9;
+	position: absolute;
+	bottom: 120px;
+	right: 20px;
+		& span{
+			display: inline-block;
+			margin-bottom: 10px;
+			text-align: center;
+			padding: 5px 9px;
+
+			background-color: #BB2BA2;
+		}
+	}
+			
+}
+
+
+.contacts_email{
+	.container_content_center{
+	& .form{
+		& input{min-width: 300px;}
+		}
+	}
+}
+
+footer{
+	font-size: 14px;
+}
+
+
+.numberMenu{display: none;}
+.activeBlock{display: none;}
+
+.modal_answer{
+max-width: 300px;
+height: auto;
+}
+
+}
+
+
+
